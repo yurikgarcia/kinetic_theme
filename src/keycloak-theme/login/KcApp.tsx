@@ -26,6 +26,8 @@ export default function KcApp(props: { kcContext: KcContext; }) {
 
     const { kcContext } = props;
 
+    console.log("HELLLOOOO from KcApp")
+
     const i18n = useI18n({ kcContext });
 
     if (i18n === null) {

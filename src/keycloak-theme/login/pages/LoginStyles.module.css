@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+.logo-image {
+	height: 90px; /* Default height for desktop */
+	width: 328.51px; /* Default width for desktop */
+}
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+	.logo-image {
+			height: 80px; /* Height for mobile */
+			width: 305.91px; /* Width for mobile */
+	}
+}
+
+.accountHelpers {
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px; /* Adjusted to match Questrial 16px as per your designer's request */
+  letter-spacing: 0.1em; /* 10% Letter Spacing equivalent in em units */
+  color: #000000; /* Black text color */
+	margin-top: 30px;
+
+  padding: 7px; /* Mobile-only padding */
+  border-radius: 5px; /* Corner radius */
+}
+
+@media (max-width: 600px) {
+  .accountHelpers {
+    background-color: #FFFFFF; /* Mobile background color */
+  }
+}
+
+.accountHelpers a {
+  color: inherit; /* Ensure anchor tags inherit the parent's color */
+}
+
+.inputBoxes {
+  background-color: #EEEEEE; 
+	height: 75px;
+	width: 530px;
+	border-radius: 8px;
+	border: none; /* Remove border */
+  outline: none; /* Remove outline */
+  padding: 0 10px; 
+}
+
+.loginButton {
+	font-family: 'Questrial', sans-serif;
+	font-size: 20pt;
+	letter-spacing: 0.1em; /* 10% letter spacing */
+	color: #FFFFFF;
+	background: linear-gradient(to right, #01A9ED, #0165C6); /* Gradient background */
+	border-radius: 8px; /* Corner radius */
+	height: 65px; /* Height */
+	width: 530px; /* Width */
+	border: none; /* No border */
+	cursor: pointer; /* Pointer cursor on hover */
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	text-decoration: none; /* Remove underline for anchor buttons */
+	outline: none; /* Remove outline */
+	padding: 0; /* Remove default padding */
+}
+
+.questrialRegular {
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+	font-size: 16pt;
+	letter-spacing: 0.2em; 
+  /* Other styles as needed */
+}
+
+

@@ -8,9 +8,12 @@ import { type TemplateProps } from "keycloakify/login/TemplateProps";
 import { useGetClassName } from "keycloakify/login/lib/useGetClassName";
 import type { KcContext } from "./kcContext";
 import type { I18n } from "./i18n";
-import keycloakifyLogoPngUrl from "./assets/keycloakify-logo.png";
+// import keycloakifyLogoPngUrl from "./assets/keycloakify-logo.png";
+
+
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
+    
     const {
         displayInfo = false,
         displayMessage = true,
@@ -55,30 +58,24 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         return null;
     }
 
-    return (
-        <div className={getClassName("kcLoginClass")}>
-            <div id="kc-header" className={getClassName("kcHeaderClass")}>
-                <div 
-                    id="kc-header-wrapper" 
-                    className={getClassName("kcHeaderWrapperClass")}
-                    style={{ "fontFamily": '"Work Sans"' }}
-                >
-                    {/* 
-                        Here we are referencing the `keycloakify-logo.png` in the `public` directory.  
-                        When possible don't use this approach, instead ...
-                    */}
-                    <img src={`${import.meta.env.BASE_URL}keycloakify-logo.png`} alt="Keycloakify logo" width={50} />
-                    {msg("loginTitleHtml", realm.displayNameHtml)}!!!
-                    {/* ...rely on the bundler to import your assets, it's more efficient */}
-                    <img src={keycloakifyLogoPngUrl} alt="Keycloakify logo" width={50} />
-                </div>
-            </div>
+    const formCardStyle = {
+        backgroundColor: "#F5F5F5",
+        borderRadius: "8px",
+        boxShadow: "20px 20px 50px 0 rgba(0, 0, 0, 0.2)",
+        height: displayWide ? "690px" : "675px", // Adjusted height for mobile and desktop
+        width:  "710px",
+        margin: "0 auto", 
+        
+    };
 
-            <div className={clsx(getClassName("kcFormCardClass"), displayWide && getClassName("kcFormCardAccountClass"))}>
+    return (
+        <div className={getClassName("kcLoginClass")} >
+            <div className={clsx(displayWide && getClassName("kcFormCardAccountClass"))} style={formCardStyle}>
                 <header className={getClassName("kcFormHeaderClass")}>
+                top right
                     {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
                         <div id="kc-locale">
-                            <div id="kc-locale-wrapper" className={getClassName("kcLocaleWrapperClass")}>
+                            {/* <div id="kc-locale-wrapper" className={getClassName("kcLocaleWrapperClass")}>
                                 <div className="kc-dropdown" id="kc-locale-dropdown">
                                     <a href="#" id="kc-current-locale-link">
                                         {labelBySupportedLanguageTag[currentLanguageTag]}
@@ -93,7 +90,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                         ))}
                                     </ul>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     )}
                     {!(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
@@ -134,6 +131,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                 </div>
                             </div>
                         </div>
+                        
                     ) : (
                         <>
                             {showUsernameNode}
@@ -169,6 +167,13 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                             </div>
                         )}
                         {children}
+                        {/* {displayInfo && (
+                            <div id="kc-info" className={getClassName("kcSignUpClass")}>
+                                <div id="kc-info-wrapper" className={getClassName("kcInfoAreaWrapperClass")}>
+                                    CREATE ACCOUNT
+                                </div>
+                            </div>
+                        )} */}
                         {auth !== undefined && auth.showTryAnotherWayLink && showAnotherWayIfPresent && (
                             <form
                                 id="kc-select-try-another-way-form"
@@ -194,15 +199,9 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                             {msg("doTryAnotherWay")}
                                         </a>
                                     </div>
+                                    
                                 </div>
                             </form>
-                        )}
-                        {displayInfo && (
-                            <div id="kc-info" className={getClassName("kcSignUpClass")}>
-                                <div id="kc-info-wrapper" className={getClassName("kcInfoAreaWrapperClass")}>
-                                    {infoNode}
-                                </div>
-                            </div>
                         )}
                     </div>
                 </div>

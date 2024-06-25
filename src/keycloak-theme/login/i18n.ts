@@ -13,14 +13,14 @@ export const { useI18n } = createUseI18n({
         doForgotPassword: "I forgot my password",
         invalidUserMessage: "Invalid username or password. (this message was overwrite in the theme)"
     },
-    fr: {
-        /* spell-checker: disable */
-        alphanumericalCharsOnly: "Caractère alphanumérique uniquement",
-        gender: "Genre",
-        doForgotPassword: "J'ai oublié mon mot de passe",
-        invalidUserMessage: "Nom d'utilisateur ou mot de passe invalide. (ce message a été écrasé dans le thème)"
-        /* spell-checker: enable */
-    }
+    // fr: {
+    //     /* spell-checker: disable */
+    //     alphanumericalCharsOnly: "Caractère alphanumérique uniquement",
+    //     gender: "Genre",
+    //     doForgotPassword: "J'ai oublié mon mot de passe",
+    //     invalidUserMessage: "Nom d'utilisateur ou mot de passe invalide. (ce message a été écrasé dans le thème)"
+    //     /* spell-checker: enable */
+    // }
 });
 
 export type I18n = NonNullable<ReturnType<typeof useI18n>>;

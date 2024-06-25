@@ -13,6 +13,8 @@ const KcAccountThemeApp = lazy(() => import("./keycloak-theme/account/KcApp"));
 // https://github.com/keycloakify/keycloakify-starter?tab=readme-ov-file#i-only-want-a-keycloak-theme
 const App = lazy(() => import("./App"));
 
+
+
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <Suspense>

@@ -4,6 +4,8 @@
 import { createReactOidc } from "oidc-spa/react";
 import { z } from "zod";
 
+console.log("hello from oidc.ts")
+
 //On older Keycloak version you need the /auth (e.g: http://localhost:8080/auth)
 //On newer version you must remove it (e.g: http://localhost:8080 )
 const keycloakUrl = "https://cloud-iam.keycloakify.dev/";

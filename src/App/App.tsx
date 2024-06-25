@@ -22,6 +22,8 @@ function ContextualizedApp() {
 
     const { isUserLoggedIn, login, logout, oidcTokens } = useOidc();
 
+    console.log ("HELLO FROM MAIN")
+
     return (
         <div className="App">
             <div>
@@ -62,6 +64,7 @@ function ContextualizedApp() {
             <img src={reactSvgUrl} className="App-logo rotate" alt="logo" />
             &nbsp;&nbsp;&nbsp;
             <img src={viteSvgUrl} className="App-logo" alt="logo" />
+            <h1>Helllo this is app.tsx</h1>
             </div>
             </div>
         </div>
