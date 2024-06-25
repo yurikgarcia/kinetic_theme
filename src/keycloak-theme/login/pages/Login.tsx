@@ -118,6 +118,7 @@ const Login = (
               action={url.loginAction}
               method="post"
             >
+              {/* Your form elements */}
               <div
                 className={clsx(getClassName("kcFormGroupClass"), "formGroup")}
               >
@@ -133,7 +134,10 @@ const Login = (
                     return (
                       <div className="inputStyle">
                         <div
-                          style={{ display: "flex", flexDirection: "column" }}
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                          }}
                         >
                           <label
                             htmlFor={autoCompleteHelper}
@@ -209,7 +213,13 @@ const Login = (
                       disabled={isLoginButtonDisabled}
                     />
                     {/* RESET PASSWORD and CREATE ACCOUNT links */}
-                    <div style={{ display: 'flex', alignItems: 'center', width: '530px'}}>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        width: "530px",
+                      }}
+                    >
                       {/* RESET PASSWORD LINK */}
                       {realm.resetPasswordAllowed && (
                         <div className={styles.accountHelpers}>
@@ -226,7 +236,10 @@ const Login = (
                       )}
                       {/* CREATE ACCOUNT link */}
                       {realm.registrationAllowed && !registrationDisabled && (
-                        <div className={styles.accountHelpers} style={{ marginLeft: 'auto' }}>
+                        <div
+                          className={styles.accountHelpers}
+                          style={{ marginLeft: "auto" }}
+                        >
                           <span>
                             <a
                               tabIndex={6}
@@ -246,6 +259,9 @@ const Login = (
           )}
         </div>
       </div>
+
+      {/* Gradient light bar */}
+      <div className={styles.lightBar} />
     </Template>
   );
 };
