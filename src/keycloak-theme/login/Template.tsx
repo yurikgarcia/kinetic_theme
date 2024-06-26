@@ -64,10 +64,12 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         boxShadow: "20px 20px 50px 0 rgba(0, 0, 0, 0.2)",
         height: displayWide ? "690px" : "675px", // Adjusted height for mobile and desktop
         width:  "710px",
-        margin: "0 auto", 
-        
-    };
-
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+      };
+      
     return (
         <div className={getClassName("kcLoginClass")} >
             <div className={clsx(displayWide && getClassName("kcFormCardAccountClass"))} style={formCardStyle}>
