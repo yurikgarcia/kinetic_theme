@@ -72,7 +72,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
         <div className={getClassName("kcLoginClass")} >
             <div className={clsx(displayWide && getClassName("kcFormCardAccountClass"))} style={formCardStyle}>
                 <header className={getClassName("kcFormHeaderClass")}>
-                top right
+                {/* top right */}
                     {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
                         <div id="kc-locale">
                             {/* <div id="kc-locale-wrapper" className={getClassName("kcLocaleWrapperClass")}>

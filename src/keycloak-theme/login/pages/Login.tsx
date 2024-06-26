@@ -4,6 +4,8 @@ import { useConstCallback } from "keycloakify/tools/useConstCallback";
 import { PageProps } from "keycloakify/login/pages/PageProps";
 import { useGetClassName } from "keycloakify/login/lib/useGetClassName";
 import kineticLogoBlack from "../assets/kinetic_logo_black.svg";
+import showPwLight from "../assets/showPwLight.svg";
+import hidePwLight from "../assets/hidePwLight.svg";
 import styles from "./LoginStyles.module.css";
 
 const customStyles = `
@@ -32,6 +34,28 @@ const customStyles = `
     margin-bottom: 5px;
     font-weight: bold; /* Optionally make labels bold */
   }
+  .passwordContainer {
+    position: relative;
+    width: 530px;
+  }
+  .passwordInput {
+    width: 100%;
+    padding-right: 40px; /* Make space for the button */
+  }
+.togglePasswordButton {
+  position: absolute;
+  right: 20px;
+  top: 65%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 `;
 
 const Login = (
@@ -49,7 +73,7 @@ const Login = (
     auth,
     registrationDisabled,
   } = kcContext;
-  const { msg, msgStr } = i18n;
+  const { msg } = i18n;
 
   const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
 
@@ -62,6 +86,14 @@ const Login = (
       ?.setAttribute("name", "username");
     formElement.submit();
   });
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  console.log("show", showPassword);
 
   return (
     <Template
@@ -165,7 +197,7 @@ const Login = (
                 className={clsx(getClassName("kcFormGroupClass"), "formGroup")}
               >
                 <div className="inputStyle">
-                  <div style={{ display: "flex", flexDirection: "column" }}>
+                  <div className="passwordContainer">
                     <label
                       htmlFor="password"
                       className={styles.questrialRegular}
@@ -175,11 +207,25 @@ const Login = (
                     <input
                       tabIndex={2}
                       id="password"
-                      className={styles.inputBoxes}
+                      className={clsx(styles.inputBoxes, "passwordInput")}
                       name="password"
-                      type="password"
+                      type={showPassword ? "text" : "password"}
                       autoComplete="off"
                     />
+                    <button
+                      type="button"
+                      className="togglePasswordButton"
+                      onClick={togglePasswordVisibility}
+                      aria-label={
+                        showPassword ? "Hide password" : "Show password"
+                      }
+                    >
+                      {showPassword ? (
+                        <img src={hidePwLight} alt="Hide password" />
+                      ) : (
+                        <img src={showPwLight} alt="Show password" />
+                      )}
+                    </button>
                   </div>
                   <input
                     type="hidden"
@@ -189,6 +235,13 @@ const Login = (
                       ? { value: auth.selectedCredential }
                       : {})}
                   />
+                </div>
+              </div>
+
+              <div
+                className={clsx(getClassName("kcFormGroupClass"), "formGroup")}
+              >
+                <div className="inputStyle">
                   {/* THIS IS THE LOGIN BUTTON */}
                   <div
                     id="kc-form-buttons"
