@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 
 .logo-image {
-	height: 90px; /* Default height for desktop */
-	width: 328.51px; /* Default width for desktop */
+  height: 90px; /* Default height for desktop */
+  width: 328.51px; /* Default width for desktop */
 }
 
-@media (max-width: 768px) { /* Adjust breakpoint as needed */
-	.logo-image {
-			height: 80px; /* Height for mobile */
-			width: 305.91px; /* Width for mobile */
-	}
+@media (max-width: 768px) {
+  /* Adjust breakpoint as needed */
+  .logo-image {
+    height: 80px; /* Height for mobile */
+    width: 305.91px; /* Width for mobile */
+  }
 }
 
 .accountHelpers {
@@ -19,7 +20,7 @@
   font-size: 16px; /* Adjusted to match Questrial 16px as per your designer's request */
   letter-spacing: 0.1em; /* 10% Letter Spacing equivalent in em units */
   color: #000000; /* Black text color */
-	margin-top: 30px;
+  margin-top: 30px;
 
   padding: 7px; /* Mobile-only padding */
   border-radius: 5px; /* Corner radius */
@@ -27,7 +28,7 @@
 
 @media (max-width: 600px) {
   .accountHelpers {
-    background-color: #FFFFFF; /* Mobile background color */
+    background-color: #ffffff; /* Mobile background color */
   }
 }
 
@@ -43,17 +44,16 @@
   width: 60px; /* Desktop size */
   height: 60px; /* Desktop size */
   padding: 20px; /* Desktop padding */
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   border-radius: 8px;
   box-shadow:
-    0 8px 16px rgba(0, 0, 0, 0.2), /* Darker shadow */
-    0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    /* Darker shadow */ 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
   display: flex; /* Ensure button expands to contain the icon */
   align-items: center; /* Center icon vertically */
   justify-content: center; /* Center icon horizontally */
   border: none; /* Remove button border */
 }
-
 
 .darkModeIcon {
   width: 100%; /* Occupy full width of parent (.darkModeButton) */
@@ -70,54 +70,89 @@
   }
 }
 
-
-
 .inputBoxes {
-  background-color: #EEEEEE; 
-	height: 75px;
-	width: 530px;
-	border-radius: 8px;
-	border: none; /* Remove border */
+  background-color: #eeeeee;
+  height: 75px;
+  width: 530px;
+  border-radius: 8px;
+  border: none; /* Remove border */
   outline: none; /* Remove outline */
-  padding: 0 10px; 
+  padding: 0 10px;
 }
 
+.helperButton {
+  position: fixed;
+  top: 50px; /* Adjust positioning as needed */
+  right: 50px; /* Position on the right side */
+  z-index: 1000;
+  width: 60px; /* Desktop size */
+  height: 60px; /* Desktop size */
+  padding: 20px; /* Adjust padding for icon alignment */
+  background-color: #eeeeee;
+  border-radius: 8px;
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.helperButton img {
+  width: 100%; /* Ensure the icon fills the button */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Prevent icon from exceeding button's width */
+}
+
+@media (max-width: 768px) {
+  .helperButton {
+    width: 20px;
+    height: 20px;
+    padding: 14px;
+  }
+}
+
+
+
+
 .lightBar {
-  background: linear-gradient(to right, #F4C43F 0%, #00C9FF 50%, #0035AA 100%);
+  background: linear-gradient(to right, #f4c43f 0%, #00c9ff 50%, #0035aa 100%);
   height: 30px;
   width: 710px;
   border-radius: 0 0 8px 8px;
   margin-top: 20px; /* Adjust margin as needed */
 }
 
-
 .loginButton {
-	font-family: 'Questrial', sans-serif;
-	font-size: 20pt;
-	letter-spacing: 0.1em; /* 10% letter spacing */
-	color: #FFFFFF;
-	background: linear-gradient(to right, #01A9ED, #0165C6); /* Gradient background */
-	border-radius: 8px; /* Corner radius */
-	height: 65px; /* Height */
-	width: 530px; /* Width */
-	border: none; /* No border */
-	cursor: pointer; /* Pointer cursor on hover */
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	text-decoration: none; /* Remove underline for anchor buttons */
-	outline: none; /* Remove outline */
-	padding: 0; /* Remove default padding */
+  font-family: "Questrial", sans-serif;
+  font-size: 20pt;
+  letter-spacing: 0.1em; /* 10% letter spacing */
+  color: #ffffff;
+  background: linear-gradient(
+    to right,
+    #01a9ed,
+    #0165c6
+  ); /* Gradient background */
+  border-radius: 8px; /* Corner radius */
+  height: 65px; /* Height */
+  width: 530px; /* Width */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none; /* Remove underline for anchor buttons */
+  outline: none; /* Remove outline */
+  padding: 0; /* Remove default padding */
 }
 
 .questrialRegular {
   font-family: "Questrial", sans-serif;
   font-weight: 400;
   font-style: normal;
-	font-size: 16pt;
-	letter-spacing: 0.2em; 
+  font-size: 16pt;
+  letter-spacing: 0.2em;
   /* Other styles as needed */
 }
-
-
