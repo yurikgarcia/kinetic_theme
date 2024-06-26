@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { assert } from "keycloakify/tools/assert";
 import { clsx } from "keycloakify/tools/clsx";
@@ -71,7 +72,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
   const formCardStyle = {
     backgroundColor: "#F5F5F5",
-    borderRadius: "8px",
+    borderRadius: "8px 8px 0 0",
     boxShadow: "20px 20px 50px 0 rgba(0, 0, 0, 0.2)",
     height: displayWide ? "690px" : "675px", // Adjusted height for mobile and desktop
     width: "710px",
