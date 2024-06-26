@@ -70,13 +70,13 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     return null;
   }
 
-  const formCardStyle = {
+  const formCardStyle: React.CSSProperties = {
     backgroundColor: "#F5F5F5",
     borderRadius: "8px 8px 0 0",
     boxShadow: "20px 20px 50px 0 rgba(0, 0, 0, 0.2)",
-    height: displayWide ? "690px" : "675px", // Adjusted height for mobile and desktop
+    height: displayWide ? "690px" : "675px",
     width: "710px",
-    position: "absolute",
+    position: "absolute", // Ensure position is typed correctly
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",

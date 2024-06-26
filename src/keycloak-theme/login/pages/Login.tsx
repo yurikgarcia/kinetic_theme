@@ -1,4 +1,4 @@
-import React, { useState, FormEventHandler } from "react";
+import { useState, FormEventHandler } from "react";
 import { clsx } from "keycloakify/tools/clsx";
 import { useConstCallback } from "keycloakify/tools/useConstCallback";
 import { PageProps } from "keycloakify/login/pages/PageProps";
@@ -7,6 +7,8 @@ import kineticLogoBlack from "../assets/kinetic_logo_black.svg";
 import showPwLight from "../assets/showPwLight.svg";
 import hidePwLight from "../assets/hidePwLight.svg";
 import styles from "./LoginStyles.module.css";
+import type { KcContext } from "../kcContext";
+import type { I18n } from "../i18n";
 
 const customStyles = `
   .customTemplateClass {
@@ -45,7 +47,7 @@ const customStyles = `
 .togglePasswordButton {
   position: absolute;
   right: 20px;
-  top: 50%;
+  top: 65%;
   transform: translateY(-50%);
   background: none;
   border: none;
