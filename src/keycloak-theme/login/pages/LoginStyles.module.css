@@ -35,6 +35,43 @@
   color: inherit; /* Ensure anchor tags inherit the parent's color */
 }
 
+.darkModeButton {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  z-index: 1000;
+  width: 60px; /* Desktop size */
+  height: 60px; /* Desktop size */
+  padding: 20px; /* Desktop padding */
+  background-color: #EEEEEE;
+  border-radius: 8px;
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.2), /* Darker shadow */
+    0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  display: flex; /* Ensure button expands to contain the icon */
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+  border: none; /* Remove button border */
+}
+
+
+.darkModeIcon {
+  width: 100%; /* Occupy full width of parent (.darkModeButton) */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure icon does not exceed button's width */
+}
+
+@media (max-width: 768px) {
+  /* Mobile styles */
+  .darkModeButton {
+    width: 20px;
+    height: 20px;
+    padding: 14px;
+  }
+}
+
+
+
 .inputBoxes {
   background-color: #EEEEEE; 
 	height: 75px;

@@ -45,7 +45,7 @@ const customStyles = `
 .togglePasswordButton {
   position: absolute;
   right: 20px;
-  top: 65%;
+  top: 50%;
   transform: translateY(-50%);
   background: none;
   border: none;
@@ -93,9 +93,8 @@ const Login = (
     setShowPassword(!showPassword);
   };
 
-  console.log("show", showPassword);
-
   return (
+
     <Template
       {...{ kcContext, i18n, doUseDefaultCss, classes }}
       displayInfo={
