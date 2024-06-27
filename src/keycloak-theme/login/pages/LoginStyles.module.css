@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 
+#kc-form {
+  max-width: 100%; /* Ensure the form container doesn't exceed the viewport width */
+  padding: 0 15px; /* Add some padding for better spacing on mobile */
+}
+
+@media (max-width: 768px) {
+  #kc-form {
+    padding: 0 10px; /* Reduce padding on smaller screens if needed */
+  }
+}
+
 .logo-image {
   height: 90px; /* Default height for desktop */
   width: 328.51px; /* Default width for desktop */
@@ -29,6 +40,7 @@
 @media (max-width: 600px) {
   .accountHelpers {
     background-color: #ffffff; /* Mobile background color */
+    font-size: 12px;
   }
 }
 

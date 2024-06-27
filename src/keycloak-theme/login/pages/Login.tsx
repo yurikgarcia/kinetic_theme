@@ -282,7 +282,7 @@ const Login = (
                       style={{
                         display: "flex",
                         alignItems: "center",
-                        width: "530px",
+                        width: isMobile ? "360px" : "530px",
                       }}
                     >
                       {/* RESET PASSWORD LINK */}
