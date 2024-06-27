@@ -32,7 +32,6 @@
   letter-spacing: 0.1em; /* 10% Letter Spacing equivalent in em units */
   color: #000000; /* Black text color */
   margin-top: 30px;
-
   padding: 7px; /* Mobile-only padding */
   border-radius: 5px; /* Corner radius */
 }
@@ -127,16 +126,22 @@
 }
 
 .helperButton img {
-  width: 100%; /* Ensure the icon fills the button */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 100%; /* Prevent icon from exceeding button's width */
+  width: 30px; /* Desktop icon size */
+  height: 30px; /* Desktop icon size */
+  max-width: 100%; /* Ensure icon does not exceed button's width */
 }
 
 @media (max-width: 768px) {
   .helperButton {
-    width: 20px;
-    height: 20px;
-    padding: 14px;
+    top: 15px; /* Mobile alignment */
+    right: 15px; /* Mobile alignment */
+    width: 50px; /* Mobile size */
+    height: 50px; /* Mobile size */
+    padding: 14px; /* Mobile padding */
+  }
+  .helperButton img {
+    width: 20px; /* Mobile icon size */
+    height: 20px; /* Mobile icon size */
   }
 }
 

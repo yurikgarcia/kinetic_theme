@@ -45,20 +45,20 @@ const customStyles = `
     width: 100%;
     padding-right: 40px; /* Make space for the button */
   }
-.togglePasswordButton {
-  position: absolute;
-  right: 20px;
-  top: 65%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .togglePasswordButton {
+    position: absolute;
+    right: 20px;
+    top: 65%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Login = (
@@ -259,8 +259,7 @@ const Login = (
                     id="kc-form-buttons"
                     className={clsx(
                       getClassName("kcFormGroupClass"),
-                      "formGroup",
-
+                      "formGroup"
                     )}
                   >
                     <input

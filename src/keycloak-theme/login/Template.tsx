@@ -1,5 +1,3 @@
-
-
 import { useState, useEffect } from "react";
 import { assert } from "keycloakify/tools/assert";
 import { clsx } from "keycloakify/tools/clsx";
@@ -12,15 +10,14 @@ import darkModeIcon from "./assets/darkMode.svg";
 import lightModeIcon from "./assets/lightMode.svg";
 import helpLight from "./assets/helpLight.svg";
 import styles from "../../keycloak-theme/login/pages/LoginStyles.module.css";
-import useWindowSize from '../customWindow';
+import useWindowSize from "../customWindow";
 // import keycloakifyLogoPngUrl from "./assets/keycloakify-logo.png";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
-
   const isMobile = useWindowSize();
 
   useEffect(() => {
-    console.log('isMobile:', isMobile); // Log the value of isMobile
+    console.log("isMobile:", isMobile); // Log the value of isMobile
   }, [isMobile]);
 
   const [darkModeOn, setDarkModeOn] = useState(false);
@@ -50,8 +47,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
   // const { msg, changeLocale, labelBySupportedLanguageTag, currentLanguageTag } =
   //   i18n;
 
-    const { msg } =
-    i18n;
+  const { msg } = i18n;
 
   const { realm, locale, auth, url, message, isAppInitiatedAction } = kcContext;
 
@@ -91,8 +87,6 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     transform: "translate(-50%, -50%)",
   };
 
-
-
   return (
     <div className={getClassName("kcLoginClass")}>
       {/* Dark Mode icon */}
@@ -103,9 +97,9 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
           alt={darkModeOn ? "Light Mode" : "Dark Mode"}
         />
       </button>
-            {/* Helper Light button */}
-            <button className={styles.helperButton} style={{ right: "50px", top: "50px" }}>
-        <img src={helpLight} alt="Helper Light" />
+      {/* Helper Light button */}
+      <button className={styles.helperButton}>
+        <img className={styles.helpIcon} src={helpLight} alt="Helper Light" />
       </button>
       <div
         className={clsx(displayWide && getClassName("kcFormCardAccountClass"))}
@@ -247,7 +241,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 </div>
               )}
             {children}
-              
+
             {auth !== undefined &&
               auth.showTryAnotherWayLink &&
               showAnotherWayIfPresent && (
