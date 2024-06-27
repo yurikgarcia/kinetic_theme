@@ -45,20 +45,22 @@ const customStyles = `
     width: 100%;
     padding-right: 40px; /* Make space for the button */
   }
+.togglePasswordButton {
+  position: absolute;
+  right: 9.5rem; /* Default position for desktop */
+  top: 61%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
   .togglePasswordButton {
-    position: absolute;
-    right: 20px;
-    top: 65%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    right: 3rem; /* Adjusted position for mobile view */
+      top: 63%;
   }
+}
 `;
 
 const Login = (
