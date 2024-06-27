@@ -69,7 +69,7 @@
 .darkModeIcon {
   width: 30px; /* Desktop icon size */
   height: 30px; /* Desktop icon size */
-  max-width: 100%; /* Ensure icon does not exceed button's width */
+  /* Ensure icon does not exceed button's width */
 }
 
 @media (max-width: 768px) {
