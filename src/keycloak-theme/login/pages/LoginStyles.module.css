@@ -47,8 +47,8 @@
   background-color: #eeeeee;
   border-radius: 8px;
   box-shadow:
-    0 8px 16px rgba(0, 0, 0, 0.2), /* Darker shadow */
-    0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    /* Darker shadow */ 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
   display: flex; /* Ensure button expands to contain the icon */
   align-items: center; /* Center icon vertically */
   justify-content: center; /* Center icon horizontally */
@@ -70,15 +70,12 @@
     height: 50px; /* Mobile size */
     padding: 14px; /* Mobile padding */
   }
-  
+
   .darkModeIcon {
     width: 20px; /* Mobile icon size */
     height: 20px; /* Mobile icon size */
   }
 }
-
-
-
 
 .inputBoxes {
   background-color: #eeeeee;
@@ -90,8 +87,10 @@
   padding: 0 10px;
 }
 
-@media (max-width: 768px) { /* Adjust for mobile screens */
+@media (max-width: 768px) {
+  /* Adjust for mobile screens */
   .inputBoxes {
+    height: 55px;
     width: 365px;
   }
 }
@@ -129,9 +128,6 @@
   }
 }
 
-
-
-
 .lightBar {
   background: linear-gradient(to right, #f4c43f 0%, #00c9ff 50%, #0035aa 100%);
   height: 30px;
@@ -145,7 +141,6 @@
     width: 405px; /* Mobile width */
   }
 }
-
 
 .loginButton {
   font-family: "Questrial", sans-serif;
@@ -173,13 +168,11 @@
 
 @media (max-width: 768px) {
   .loginButton {
+    height: 55px;
     width: 365px; /* Width for mobile */
     margin: 0 auto; /* Center horizontally */
   }
 }
-
-
-
 
 .questrialRegular {
   font-family: "Questrial", sans-serif;
@@ -188,4 +181,10 @@
   font-size: 16pt;
   letter-spacing: 0.2em;
   /* Other styles as needed */
+}
+
+@media (max-width: 768px) {
+  .questrialRegular {
+    font-size: 12pt; /* Mobile font size */
+  }
 }
