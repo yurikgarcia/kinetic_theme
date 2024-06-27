@@ -38,8 +38,8 @@
 
 .darkModeButton {
   position: fixed;
-  top: 50px;
-  left: 50px;
+  top: 50px; /* Desktop alignment */
+  left: 50px; /* Desktop alignment */
   z-index: 1000;
   width: 60px; /* Desktop size */
   height: 60px; /* Desktop size */
@@ -47,8 +47,8 @@
   background-color: #eeeeee;
   border-radius: 8px;
   box-shadow:
-    0 8px 16px rgba(0, 0, 0, 0.2),
-    /* Darker shadow */ 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    0 8px 16px rgba(0, 0, 0, 0.2), /* Darker shadow */
+    0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
   display: flex; /* Ensure button expands to contain the icon */
   align-items: center; /* Center icon vertically */
   justify-content: center; /* Center icon horizontally */
@@ -56,19 +56,29 @@
 }
 
 .darkModeIcon {
-  width: 100%; /* Occupy full width of parent (.darkModeButton) */
-  height: auto; /* Maintain aspect ratio */
+  width: 30px; /* Desktop icon size */
+  height: 30px; /* Desktop icon size */
   max-width: 100%; /* Ensure icon does not exceed button's width */
 }
 
 @media (max-width: 768px) {
   /* Mobile styles */
   .darkModeButton {
-    width: 20px;
-    height: 20px;
-    padding: 14px;
+    top: 15px; /* Mobile alignment */
+    left: 15px; /* Mobile alignment */
+    width: 50px; /* Mobile size */
+    height: 50px; /* Mobile size */
+    padding: 14px; /* Mobile padding */
+  }
+  
+  .darkModeIcon {
+    width: 20px; /* Mobile icon size */
+    height: 20px; /* Mobile icon size */
   }
 }
+
+
+
 
 .inputBoxes {
   background-color: #eeeeee;
@@ -78,6 +88,12 @@
   border: none; /* Remove border */
   outline: none; /* Remove outline */
   padding: 0 10px;
+}
+
+@media (max-width: 768px) { /* Adjust for mobile screens */
+  .inputBoxes {
+    width: 365px;
+  }
 }
 
 .helperButton {
@@ -124,6 +140,13 @@
   margin-top: 20px; /* Adjust margin as needed */
 }
 
+@media (max-width: 768px) {
+  .lightBar {
+    width: 405px; /* Mobile width */
+  }
+}
+
+
 .loginButton {
   font-family: "Questrial", sans-serif;
   font-size: 20pt;
@@ -135,18 +158,28 @@
     #0165c6
   ); /* Gradient background */
   border-radius: 8px; /* Corner radius */
-  height: 65px; /* Height */
-  width: 530px; /* Width */
+  height: 75px; /* Default height */
+  width: 530px; /* Default width for desktop */
   border: none; /* No border */
   cursor: pointer; /* Pointer cursor on hover */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
   text-align: center;
   text-decoration: none; /* Remove underline for anchor buttons */
   outline: none; /* Remove outline */
   padding: 0; /* Remove default padding */
 }
+
+@media (max-width: 768px) {
+  .loginButton {
+    width: 365px; /* Width for mobile */
+    margin: 0 auto; /* Center horizontally */
+  }
+}
+
+
+
 
 .questrialRegular {
   font-family: "Questrial", sans-serif;

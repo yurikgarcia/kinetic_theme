@@ -1,4 +1,5 @@
 
+
 import { useState, useEffect } from "react";
 import { assert } from "keycloakify/tools/assert";
 import { clsx } from "keycloakify/tools/clsx";
@@ -11,9 +12,17 @@ import darkModeIcon from "./assets/darkMode.svg";
 import lightModeIcon from "./assets/lightMode.svg";
 import helpLight from "./assets/helpLight.svg";
 import styles from "../../keycloak-theme/login/pages/LoginStyles.module.css";
+import useWindowSize from '../customWindow';
 // import keycloakifyLogoPngUrl from "./assets/keycloakify-logo.png";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
+
+  const isMobile = useWindowSize();
+
+  useEffect(() => {
+    console.log('isMobile:', isMobile); // Log the value of isMobile
+  }, [isMobile]);
+
   const [darkModeOn, setDarkModeOn] = useState(false);
 
   const toggleDarkMode = () => {
@@ -74,8 +83,8 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     backgroundColor: "#F5F5F5",
     borderRadius: "8px 8px 0 0",
     boxShadow: "20px 20px 50px 0 rgba(0, 0, 0, 0.2)",
-    height: displayWide ? "690px" : "675px",
-    width: "710px",
+    height: isMobile ? "690px" : "675px", // Adjusted for mobile and desktop
+    width: isMobile ? "405px" : "710px",
     position: "absolute", // Ensure position is typed correctly
     top: "50%",
     left: "50%",
@@ -89,6 +98,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
       {/* Dark Mode icon */}
       <button className={styles.darkModeButton} onClick={toggleDarkMode}>
         <img
+          className={styles.darkModeIcon}
           src={darkModeOn ? lightModeIcon : darkModeIcon}
           alt={darkModeOn ? "Light Mode" : "Dark Mode"}
         />
@@ -237,13 +247,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 </div>
               )}
             {children}
-            {/* {displayInfo && (
-                            <div id="kc-info" className={getClassName("kcSignUpClass")}>
-                                <div id="kc-info-wrapper" className={getClassName("kcInfoAreaWrapperClass")}>
-                                    CREATE ACCOUNT
-                                </div>
-                            </div>
-                        )} */}
+              
             {auth !== undefined &&
               auth.showTryAnotherWayLink &&
               showAnotherWayIfPresent && (

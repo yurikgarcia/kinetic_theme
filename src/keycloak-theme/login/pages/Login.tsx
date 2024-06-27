@@ -1,4 +1,4 @@
-import { useState, FormEventHandler } from "react";
+import { useState, FormEventHandler, useEffect } from "react";
 import { clsx } from "keycloakify/tools/clsx";
 import { useConstCallback } from "keycloakify/tools/useConstCallback";
 import { PageProps } from "keycloakify/login/pages/PageProps";
@@ -9,6 +9,7 @@ import hidePwLight from "../assets/hidePwLight.svg";
 import styles from "./LoginStyles.module.css";
 import type { KcContext } from "../kcContext";
 import type { I18n } from "../i18n";
+import useWindowSize from "../../customWindow.ts";
 
 const customStyles = `
   .customTemplateClass {
@@ -95,8 +96,13 @@ const Login = (
     setShowPassword(!showPassword);
   };
 
-  return (
+  const isMobile = useWindowSize();
 
+  useEffect(() => {
+    console.log("isMobile:", isMobile); // Log the value of isMobile
+  }, [isMobile]);
+
+  return (
     <Template
       {...{ kcContext, i18n, doUseDefaultCss, classes }}
       displayInfo={
@@ -123,9 +129,15 @@ const Login = (
           marginBottom: "42px",
         }}
       >
-        <img src={kineticLogoBlack} alt="Kinetic Logo" />
+        <img
+          src={kineticLogoBlack}
+          alt="Kinetic Logo"
+          style={{
+            height: isMobile ? "70px" : "90px",
+            width: isMobile ? "305.91px" : "348.51px",
+          }}
+        />
       </div>
-
       <div
         id="kc-form"
         className={clsx(
@@ -194,40 +206,39 @@ const Login = (
                   })()}
               </div>
 
-              <div
-                className={clsx(getClassName("kcFormGroupClass"), "formGroup")}
-              >
-                <div className="inputStyle">
-                  <div className="passwordContainer">
-                    <label
-                      htmlFor="password"
-                      className={styles.questrialRegular}
-                    >
-                      PASSWORD
-                    </label>
-                    <input
-                      tabIndex={2}
-                      id="password"
-                      className={clsx(styles.inputBoxes, "passwordInput")}
-                      name="password"
-                      type={showPassword ? "text" : "password"}
-                      autoComplete="off"
-                    />
-                    <button
-                      type="button"
-                      className="togglePasswordButton"
-                      onClick={togglePasswordVisibility}
-                      aria-label={
-                        showPassword ? "Hide password" : "Show password"
-                      }
-                    >
-                      {showPassword ? (
-                        <img src={hidePwLight} alt="Hide password" />
-                      ) : (
-                        <img src={showPwLight} alt="Show password" />
-                      )}
-                    </button>
-                  </div>
+              <div className="inputStyle">
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <label htmlFor="password" className={styles.questrialRegular}>
+                    PASSWORD
+                  </label>
+                  <input
+                    tabIndex={2}
+                    id="password"
+                    className={styles.inputBoxes}
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    autoComplete="off"
+                  />
+                  <button
+                    type="button"
+                    className="togglePasswordButton"
+                    onClick={togglePasswordVisibility}
+                    aria-label={
+                      showPassword ? "Hide password" : "Show password"
+                    }
+                  >
+                    {showPassword ? (
+                      <img src={hidePwLight} alt="Hide password" />
+                    ) : (
+                      <img src={showPwLight} alt="Show password" />
+                    )}
+                  </button>
+
                   <input
                     type="hidden"
                     id="id-hidden-input"
@@ -249,7 +260,7 @@ const Login = (
                     className={clsx(
                       getClassName("kcFormGroupClass"),
                       "formGroup",
-                      styles.formGroupButtons // Adjusted for button alignment
+
                     )}
                   >
                     <input
