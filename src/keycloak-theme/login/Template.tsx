@@ -79,10 +79,10 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     backgroundColor: "#F5F5F5",
     borderRadius: "8px 8px 0 0",
     boxShadow: "20px 20px 50px 0 rgba(0, 0, 0, 0.2)",
-    height: isMobile ? "690px" : "675px", // Adjusted for mobile and desktop
+    height: isMobile ? "550px" : "675px",
     width: isMobile ? "405px" : "710px",
-    position: "absolute", // Ensure position is typed correctly
-    top: "50%",
+    position: "absolute",
+    top: isMobile ? "40%" : "50%", // Adjust top position for mobile
     left: "50%",
     transform: "translate(-50%, -50%)",
   };
